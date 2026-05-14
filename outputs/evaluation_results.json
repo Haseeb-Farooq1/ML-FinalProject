@@ -1,5 +1,5 @@
 {
-  "best_model": "LR \u2014 Baseline",
+  "best_model": "LR \u2014 Tuned (opt thresh)",
   "selected_features": [
     "age",
     "sex",
@@ -13,7 +13,12 @@
     "oldpeak",
     "slope",
     "ca",
-    "thal"
+    "thal",
+    "oldpeak_log",
+    "thalach_age_ratio",
+    "age_thalach",
+    "cp_exang",
+    "ca_oldpeak"
   ],
   "best_lr_params": {
     "C": 0.1,
@@ -22,87 +27,121 @@
     "solver": "liblinear"
   },
   "best_dt_params": {
-    "criterion": "entropy",
+    "criterion": "gini",
     "max_depth": 3,
-    "min_samples_leaf": 4,
+    "min_samples_leaf": 8,
     "min_samples_split": 2
+  },
+  "best_rf_params": {
+    "max_depth": 8,
+    "max_features": "sqrt",
+    "min_samples_leaf": 2,
+    "min_samples_split": 5,
+    "n_estimators": 300
   },
   "comparison_table": {
     "Accuracy": {
       "LR \u2014 Baseline": 0.8033,
-      "LR \u2014 Tuned": 0.8033,
-      "DT \u2014 Baseline": 0.8033,
-      "DT \u2014 Tuned": 0.7705
+      "LR \u2014 Tuned": 0.8197,
+      "LR \u2014 Tuned (opt thresh)": 0.8361,
+      "DT \u2014 Baseline": 0.7869,
+      "DT \u2014 Tuned": 0.8197,
+      "RF \u2014 Baseline": 0.7705,
+      "RF \u2014 Tuned": 0.8033
     },
     "Precision": {
-      "LR \u2014 Baseline": 0.8,
-      "LR \u2014 Tuned": 0.8,
-      "DT \u2014 Baseline": 0.8182,
-      "DT \u2014 Tuned": 0.7436
+      "LR \u2014 Baseline": 0.8182,
+      "LR \u2014 Tuned": 0.8235,
+      "LR \u2014 Tuned (opt thresh)": 0.8286,
+      "DT \u2014 Baseline": 0.8333,
+      "DT \u2014 Tuned": 0.8056,
+      "RF \u2014 Baseline": 0.7714,
+      "RF \u2014 Tuned": 0.8
     },
     "Recall": {
-      "LR \u2014 Baseline": 0.8485,
+      "LR \u2014 Baseline": 0.8182,
       "LR \u2014 Tuned": 0.8485,
-      "DT \u2014 Baseline": 0.8182,
-      "DT \u2014 Tuned": 0.8788
+      "LR \u2014 Tuned (opt thresh)": 0.8788,
+      "DT \u2014 Baseline": 0.7576,
+      "DT \u2014 Tuned": 0.8788,
+      "RF \u2014 Baseline": 0.8182,
+      "RF \u2014 Tuned": 0.8485
     },
     "F1-Score": {
-      "LR \u2014 Baseline": 0.8235,
-      "LR \u2014 Tuned": 0.8235,
-      "DT \u2014 Baseline": 0.8182,
-      "DT \u2014 Tuned": 0.8056
+      "LR \u2014 Baseline": 0.8182,
+      "LR \u2014 Tuned": 0.8358,
+      "LR \u2014 Tuned (opt thresh)": 0.8529,
+      "DT \u2014 Baseline": 0.7937,
+      "DT \u2014 Tuned": 0.8406,
+      "RF \u2014 Baseline": 0.7941,
+      "RF \u2014 Tuned": 0.8235
     },
     "ROC-AUC": {
-      "LR \u2014 Baseline": 0.8712,
-      "LR \u2014 Tuned": 0.8593,
-      "DT \u2014 Baseline": 0.8019,
-      "DT \u2014 Tuned": 0.8306
+      "LR \u2014 Baseline": 0.8604,
+      "LR \u2014 Tuned": 0.8496,
+      "LR \u2014 Tuned (opt thresh)": NaN,
+      "DT \u2014 Baseline": 0.7895,
+      "DT \u2014 Tuned": 0.8333,
+      "RF \u2014 Baseline": 0.8387,
+      "RF \u2014 Tuned": 0.869
     },
     "CV Acc (mean)": {
-      "LR \u2014 Baseline": 0.8379,
-      "LR \u2014 Tuned": 0.842,
-      "DT \u2014 Baseline": 0.7801,
-      "DT \u2014 Tuned": 0.8132
+      "LR \u2014 Baseline": 0.8382,
+      "LR \u2014 Tuned": 0.8462,
+      "LR \u2014 Tuned (opt thresh)": NaN,
+      "DT \u2014 Baseline": 0.7221,
+      "DT \u2014 Tuned": 0.809,
+      "RF \u2014 Baseline": 0.8587,
+      "RF \u2014 Tuned": 0.8628
     },
     "CV Acc (std)": {
-      "LR \u2014 Baseline": 0.0861,
-      "LR \u2014 Tuned": 0.063,
-      "DT \u2014 Baseline": 0.028,
-      "DT \u2014 Tuned": 0.0592
+      "LR \u2014 Baseline": 0.0677,
+      "LR \u2014 Tuned": 0.0683,
+      "LR \u2014 Tuned (opt thresh)": NaN,
+      "DT \u2014 Baseline": 0.0376,
+      "DT \u2014 Tuned": 0.0612,
+      "RF \u2014 Baseline": 0.0729,
+      "RF \u2014 Tuned": 0.0556
     },
     "Train Accuracy": {
-      "LR \u2014 Baseline": 0.8589,
-      "LR \u2014 Tuned": 0.8506,
+      "LR \u2014 Baseline": 0.8548,
+      "LR \u2014 Tuned": 0.8548,
+      "LR \u2014 Tuned (opt thresh)": NaN,
       "DT \u2014 Baseline": 1.0,
-      "DT \u2014 Tuned": 0.8382
+      "DT \u2014 Tuned": 0.8631,
+      "RF \u2014 Baseline": 1.0,
+      "RF \u2014 Tuned": 0.9793
     },
     "Overfit Gap": {
-      "LR \u2014 Baseline": 0.0556,
-      "LR \u2014 Tuned": 0.0473,
-      "DT \u2014 Baseline": 0.1967,
-      "DT \u2014 Tuned": 0.0677
+      "LR \u2014 Baseline": 0.0515,
+      "LR \u2014 Tuned": 0.0351,
+      "LR \u2014 Tuned (opt thresh)": NaN,
+      "DT \u2014 Baseline": 0.2131,
+      "DT \u2014 Tuned": 0.0434,
+      "RF \u2014 Baseline": 0.2295,
+      "RF \u2014 Tuned": 0.176
     }
   },
   "top_features_perm": [
     {
-      "Feature": "oldpeak",
-      "Importance": 0.06754098360655739
-    },
-    {
-      "Feature": "sex",
-      "Importance": 0.05573770491803279
-    },
-    {
       "Feature": "ca",
-      "Importance": 0.046885245901639346
-    },
-    {
-      "Feature": "thal",
-      "Importance": 0.04393442622950821
+      "Importance": 0.07081967213114757
     },
     {
       "Feature": "thalach",
-      "Importance": 0.03737704918032788
+      "Importance": 0.06000000000000003
+    },
+    {
+      "Feature": "oldpeak_log",
+      "Importance": 0.059672131147541024
+    },
+    {
+      "Feature": "ca_oldpeak",
+      "Importance": 0.05934426229508201
+    },
+    {
+      "Feature": "sex",
+      "Importance": 0.059016393442623
     }
   ]
 }
