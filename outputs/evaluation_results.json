@@ -1,24 +1,14 @@
 {
   "best_model": "LR \u2014 Tuned (opt thresh)",
   "selected_features": [
-    "age",
-    "sex",
-    "cp",
-    "trestbps",
-    "chol",
-    "fbs",
-    "restecg",
-    "thalach",
-    "exang",
-    "oldpeak",
-    "slope",
-    "ca",
-    "thal",
-    "oldpeak_log",
-    "thalach_age_ratio",
-    "age_thalach",
-    "cp_exang",
-    "ca_oldpeak"
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
   ],
   "best_lr_params": {
     "C": 0.1,
@@ -29,119 +19,119 @@
   "best_dt_params": {
     "criterion": "gini",
     "max_depth": 3,
-    "min_samples_leaf": 8,
+    "min_samples_leaf": 4,
     "min_samples_split": 2
   },
   "best_rf_params": {
     "max_depth": 8,
-    "max_features": "sqrt",
+    "max_features": "log2",
     "min_samples_leaf": 2,
-    "min_samples_split": 5,
-    "n_estimators": 300
+    "min_samples_split": 10,
+    "n_estimators": 200
   },
   "comparison_table": {
     "Accuracy": {
-      "LR \u2014 Baseline": 0.8033,
-      "LR \u2014 Tuned": 0.8197,
-      "LR \u2014 Tuned (opt thresh)": 0.8361,
-      "DT \u2014 Baseline": 0.7869,
-      "DT \u2014 Tuned": 0.8197,
-      "RF \u2014 Baseline": 0.7705,
-      "RF \u2014 Tuned": 0.8033
+      "LR \u2014 Baseline": 0.7143,
+      "LR \u2014 Tuned": 0.6948,
+      "LR \u2014 Tuned (opt thresh)": 0.7338,
+      "DT \u2014 Baseline": 0.7208,
+      "DT \u2014 Tuned": 0.7013,
+      "RF \u2014 Baseline": 0.7597,
+      "RF \u2014 Tuned": 0.7662
     },
     "Precision": {
-      "LR \u2014 Baseline": 0.8182,
-      "LR \u2014 Tuned": 0.8235,
-      "LR \u2014 Tuned (opt thresh)": 0.8286,
-      "DT \u2014 Baseline": 0.8333,
-      "DT \u2014 Tuned": 0.8056,
-      "RF \u2014 Baseline": 0.7714,
-      "RF \u2014 Tuned": 0.8
+      "LR \u2014 Baseline": 0.6087,
+      "LR \u2014 Tuned": 0.5778,
+      "LR \u2014 Tuned (opt thresh)": 0.5783,
+      "DT \u2014 Baseline": 0.6341,
+      "DT \u2014 Tuned": 0.6818,
+      "RF \u2014 Baseline": 0.6809,
+      "RF \u2014 Tuned": 0.6957
     },
     "Recall": {
-      "LR \u2014 Baseline": 0.8182,
-      "LR \u2014 Tuned": 0.8485,
-      "LR \u2014 Tuned (opt thresh)": 0.8788,
-      "DT \u2014 Baseline": 0.7576,
-      "DT \u2014 Tuned": 0.8788,
-      "RF \u2014 Baseline": 0.8182,
-      "RF \u2014 Tuned": 0.8485
+      "LR \u2014 Baseline": 0.5185,
+      "LR \u2014 Tuned": 0.4815,
+      "LR \u2014 Tuned (opt thresh)": 0.8889,
+      "DT \u2014 Baseline": 0.4815,
+      "DT \u2014 Tuned": 0.2778,
+      "RF \u2014 Baseline": 0.5926,
+      "RF \u2014 Tuned": 0.5926
     },
     "F1-Score": {
-      "LR \u2014 Baseline": 0.8182,
-      "LR \u2014 Tuned": 0.8358,
-      "LR \u2014 Tuned (opt thresh)": 0.8529,
-      "DT \u2014 Baseline": 0.7937,
-      "DT \u2014 Tuned": 0.8406,
-      "RF \u2014 Baseline": 0.7941,
-      "RF \u2014 Tuned": 0.8235
+      "LR \u2014 Baseline": 0.56,
+      "LR \u2014 Tuned": 0.5253,
+      "LR \u2014 Tuned (opt thresh)": 0.7007,
+      "DT \u2014 Baseline": 0.5474,
+      "DT \u2014 Tuned": 0.3947,
+      "RF \u2014 Baseline": 0.6337,
+      "RF \u2014 Tuned": 0.64
     },
     "ROC-AUC": {
-      "LR \u2014 Baseline": 0.8604,
-      "LR \u2014 Tuned": 0.8496,
+      "LR \u2014 Baseline": 0.823,
+      "LR \u2014 Tuned": 0.8117,
       "LR \u2014 Tuned (opt thresh)": NaN,
-      "DT \u2014 Baseline": 0.7895,
-      "DT \u2014 Tuned": 0.8333,
-      "RF \u2014 Baseline": 0.8387,
-      "RF \u2014 Tuned": 0.869
+      "DT \u2014 Baseline": 0.6657,
+      "DT \u2014 Tuned": 0.7893,
+      "RF \u2014 Baseline": 0.8147,
+      "RF \u2014 Tuned": 0.8204
     },
     "CV Acc (mean)": {
-      "LR \u2014 Baseline": 0.8382,
-      "LR \u2014 Tuned": 0.8462,
+      "LR \u2014 Baseline": 0.7882,
+      "LR \u2014 Tuned": 0.7931,
       "LR \u2014 Tuned (opt thresh)": NaN,
-      "DT \u2014 Baseline": 0.7221,
-      "DT \u2014 Tuned": 0.809,
-      "RF \u2014 Baseline": 0.8587,
-      "RF \u2014 Tuned": 0.8628
+      "DT \u2014 Baseline": 0.6856,
+      "DT \u2014 Tuned": 0.7525,
+      "RF \u2014 Baseline": 0.7639,
+      "RF \u2014 Tuned": 0.785
     },
     "CV Acc (std)": {
-      "LR \u2014 Baseline": 0.0677,
-      "LR \u2014 Tuned": 0.0683,
+      "LR \u2014 Baseline": 0.0158,
+      "LR \u2014 Tuned": 0.0184,
       "LR \u2014 Tuned (opt thresh)": NaN,
-      "DT \u2014 Baseline": 0.0376,
-      "DT \u2014 Tuned": 0.0612,
-      "RF \u2014 Baseline": 0.0729,
-      "RF \u2014 Tuned": 0.0556
+      "DT \u2014 Baseline": 0.0146,
+      "DT \u2014 Tuned": 0.0211,
+      "RF \u2014 Baseline": 0.0244,
+      "RF \u2014 Tuned": 0.0199
     },
     "Train Accuracy": {
-      "LR \u2014 Baseline": 0.8548,
-      "LR \u2014 Tuned": 0.8548,
+      "LR \u2014 Baseline": 0.7915,
+      "LR \u2014 Tuned": 0.7899,
       "LR \u2014 Tuned (opt thresh)": NaN,
       "DT \u2014 Baseline": 1.0,
-      "DT \u2014 Tuned": 0.8631,
+      "DT \u2014 Tuned": 0.7622,
       "RF \u2014 Baseline": 1.0,
-      "RF \u2014 Tuned": 0.9793
+      "RF \u2014 Tuned": 0.9088
     },
     "Overfit Gap": {
-      "LR \u2014 Baseline": 0.0515,
-      "LR \u2014 Tuned": 0.0351,
+      "LR \u2014 Baseline": 0.0772,
+      "LR \u2014 Tuned": 0.0951,
       "LR \u2014 Tuned (opt thresh)": NaN,
-      "DT \u2014 Baseline": 0.2131,
-      "DT \u2014 Tuned": 0.0434,
-      "RF \u2014 Baseline": 0.2295,
-      "RF \u2014 Tuned": 0.176
+      "DT \u2014 Baseline": 0.2792,
+      "DT \u2014 Tuned": 0.0609,
+      "RF \u2014 Baseline": 0.2403,
+      "RF \u2014 Tuned": 0.1426
     }
   },
   "top_features_perm": [
     {
-      "Feature": "ca",
-      "Importance": 0.07081967213114757
+      "Feature": "Glucose",
+      "Importance": 0.05805194805194798
     },
     {
-      "Feature": "thalach",
-      "Importance": 0.06000000000000003
+      "Feature": "BloodPressure",
+      "Importance": 0.00012987012987011992
     },
     {
-      "Feature": "oldpeak_log",
-      "Importance": 0.059672131147541024
+      "Feature": "SkinThickness",
+      "Importance": 0.0
     },
     {
-      "Feature": "ca_oldpeak",
-      "Importance": 0.05934426229508201
+      "Feature": "Insulin",
+      "Importance": 0.0
     },
     {
-      "Feature": "sex",
-      "Importance": 0.059016393442623
+      "Feature": "Age",
+      "Importance": -0.007012987012987046
     }
   ]
 }

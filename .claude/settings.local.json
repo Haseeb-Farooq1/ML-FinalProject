@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($paths = @\\(\"C:\\\\Python312\\\\python.exe\",\"C:\\\\Python311\\\\python.exe\",\"C:\\\\Python310\\\\python.exe\",\"C:\\\\Users\\\\VICTUS\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\",\"C:\\\\Users\\\\VICTUS\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe\",\"C:\\\\Users\\\\VICTUS\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python310\\\\python.exe\",\"C:\\\\ProgramData\\\\Miniconda3\\\\python.exe\",\"C:\\\\ProgramData\\\\Anaconda3\\\\python.exe\",\"C:\\\\Users\\\\VICTUS\\\\Miniconda3\\\\python.exe\",\"C:\\\\Users\\\\VICTUS\\\\anaconda3\\\\python.exe\"\\); foreach\\($p in $paths\\){if\\(Test-Path $p\\){Write-Output \"FOUND: $p\"; break}})",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\VICTUS\\\\AppData\\\\Local\\\\Programs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"C:\\\\\" -ErrorAction SilentlyContinue | Where-Object {$_.Name -match \"python|conda|miniconda|anaconda\"} | Select-Object FullName)",
+      "PowerShell(& \"C:\\\\Users\\\\VICTUS\\\\.local\\\\bin\\\\python3.14.exe\" --version 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\VICTUS\\\\.local\\\\bin\\\\python3.14.exe\" -c \"import pptx; print\\('pptx OK', pptx.__version__\\)\" 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\VICTUS\\\\.local\\\\bin\\\\uv.exe\" pip install python-pptx --quiet 2>&1)"
+    ]
+  }
+}
