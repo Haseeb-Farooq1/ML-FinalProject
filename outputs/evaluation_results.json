@@ -1,0 +1,108 @@
+{
+  "best_model": "LR \u2014 Baseline",
+  "selected_features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "best_lr_params": {
+    "C": 0.1,
+    "max_iter": 3000,
+    "penalty": "l1",
+    "solver": "liblinear"
+  },
+  "best_dt_params": {
+    "criterion": "entropy",
+    "max_depth": 3,
+    "min_samples_leaf": 4,
+    "min_samples_split": 2
+  },
+  "comparison_table": {
+    "Accuracy": {
+      "LR \u2014 Baseline": 0.8033,
+      "LR \u2014 Tuned": 0.8033,
+      "DT \u2014 Baseline": 0.8033,
+      "DT \u2014 Tuned": 0.7705
+    },
+    "Precision": {
+      "LR \u2014 Baseline": 0.8,
+      "LR \u2014 Tuned": 0.8,
+      "DT \u2014 Baseline": 0.8182,
+      "DT \u2014 Tuned": 0.7436
+    },
+    "Recall": {
+      "LR \u2014 Baseline": 0.8485,
+      "LR \u2014 Tuned": 0.8485,
+      "DT \u2014 Baseline": 0.8182,
+      "DT \u2014 Tuned": 0.8788
+    },
+    "F1-Score": {
+      "LR \u2014 Baseline": 0.8235,
+      "LR \u2014 Tuned": 0.8235,
+      "DT \u2014 Baseline": 0.8182,
+      "DT \u2014 Tuned": 0.8056
+    },
+    "ROC-AUC": {
+      "LR \u2014 Baseline": 0.8712,
+      "LR \u2014 Tuned": 0.8593,
+      "DT \u2014 Baseline": 0.8019,
+      "DT \u2014 Tuned": 0.8306
+    },
+    "CV Acc (mean)": {
+      "LR \u2014 Baseline": 0.8379,
+      "LR \u2014 Tuned": 0.842,
+      "DT \u2014 Baseline": 0.7801,
+      "DT \u2014 Tuned": 0.8132
+    },
+    "CV Acc (std)": {
+      "LR \u2014 Baseline": 0.0861,
+      "LR \u2014 Tuned": 0.063,
+      "DT \u2014 Baseline": 0.028,
+      "DT \u2014 Tuned": 0.0592
+    },
+    "Train Accuracy": {
+      "LR \u2014 Baseline": 0.8589,
+      "LR \u2014 Tuned": 0.8506,
+      "DT \u2014 Baseline": 1.0,
+      "DT \u2014 Tuned": 0.8382
+    },
+    "Overfit Gap": {
+      "LR \u2014 Baseline": 0.0556,
+      "LR \u2014 Tuned": 0.0473,
+      "DT \u2014 Baseline": 0.1967,
+      "DT \u2014 Tuned": 0.0677
+    }
+  },
+  "top_features_perm": [
+    {
+      "Feature": "oldpeak",
+      "Importance": 0.06754098360655739
+    },
+    {
+      "Feature": "sex",
+      "Importance": 0.05573770491803279
+    },
+    {
+      "Feature": "ca",
+      "Importance": 0.046885245901639346
+    },
+    {
+      "Feature": "thal",
+      "Importance": 0.04393442622950821
+    },
+    {
+      "Feature": "thalach",
+      "Importance": 0.03737704918032788
+    }
+  ]
+}
